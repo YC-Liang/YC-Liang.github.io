@@ -106,7 +106,7 @@ content:
           This is my fourth year undergraduate work that focuses on using recurrent neural networks to handle memories in the form of histories in POMDPs to learn to generate macro actions for POMDP planning. The new architecture boosts the state-of-the-art MAGIC across all tested benchmarks.
 
       # - layout: top-middle
-        title: DRT: A Lightweight Single Image Deraining Recursive Transformer
+        title: DRT A Lightweight Single Image Deraining Recursive Transformer
         link: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.html
         additional_links:
           - title:  DRT
@@ -126,7 +126,7 @@ content:
         description: | # this will include new lines to allow paragraphs
             I worked with Prof. Lexing Xie on online attention markets and the effects of filter bubbles and echo chamber effects in social media. We investigated in different stochastic models to simulate the online interaction process and used the T-Recs simulator to perform experiments.
 
-      -layout: left
+      - layout: left
         title: CSIRO Student Internships
         link_text: https://www.csiro.au/en/
         caption: Nov 2022 - Mar 2023
