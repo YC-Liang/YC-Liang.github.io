@@ -95,7 +95,7 @@ content:
         description: | # this will include new lines to allow paragraphs
           This is my first PhD project. I am lucky enough to collabote with Lydia Kavraki's lab and we proposed a novel algorithm that leverage fast motion planning library (VAMP) and the reference-based POMDP to handle online POMDP planning with long horizons. Empirically, we test on many robotic problems and our method outperforms the state-of-the-art methods by multiple factors.
 
-      # - layout: top-middle
+      - layout: top-middle
         title: Recurrent Macro Actions Generator for POMDP Planning
         link: https://ieeexplore.ieee.org/abstract/document/10341759?casa_token=y3mzX6uneXcAAAAA:j1z44RjTuBVlwqLZPj39g4tGr-kxfx5KJE9yJniQ4hPNtEi4KhHuTsojb4S8KlmJS7fjOH2LF3Lp
         additional_links:
@@ -105,7 +105,7 @@ content:
         description: |
           This is my fourth year undergraduate work that focuses on using recurrent neural networks to handle memories in the form of histories in POMDPs to learn to generate macro actions for POMDP planning. The new architecture boosts the state-of-the-art MAGIC across all tested benchmarks.
 
-      # - layout: top-middle
+      - layout: top-middle
         title: DRT A Lightweight Single Image Deraining Recursive Transformer
         link: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.html
         additional_links:
@@ -130,6 +130,7 @@ content:
         title: CSIRO Student Internships
         link_text: https://www.csiro.au/en/
         caption: Nov 2022 - Mar 2023
+        description: |
             During the last year of my undergraduate, I worked under Dr Tirthankar Bandyopadhyay at CSIRO and built a simulation environment for robotic arms to interact with cluttered objects. Specifically, I used the Mujoco physics engine and OMPL library to achieve the goal.
           
   - title: A Little More About Me
