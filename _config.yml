@@ -48,7 +48,8 @@ linkedin_username: yuanchu-liang-89485320b
 # about_title: About Me
 about_profile_image: images/profile_pic.JPG
 about_content: | # this will include new lines to allow paragraphs
-  Nice to meet you! I am Yuanchu Liang based in Australia, Canberra. I am doing a computer science PhD, supervised by Prof. Hanna Kurniawati, at the Robust Decision Making and Learning Lab, The Australian National Univeristy.
+  Nice to meet you! I am Yuanchu Liang based in Australia, Canberra. I am doing a computer science PhD, supervised by Prof. Hanna Kurniawati, at the Robust Decision Making and Learning Lab, The Australian National Univeristy (ANU).
+  Before this, I finished my high school in Adelaide, and graduated with a double degree in Engineering and Science from the ANU.
   
   My research direction focuses on building robust general purpose sequential decision making systems with application in robotics. 
   It is my hope to see robots becoming an essential ingredient in our daily life in the future, just like smart phones today. 
