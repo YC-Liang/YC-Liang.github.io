@@ -50,14 +50,14 @@ about_profile_image: images/profile_pic.JPG
 about_content: | # this will include new lines to allow paragraphs
   Nice to meet you! I am Yuanchu Liang based in Australia, Canberra. I am doing a computer science PhD, supervised by Prof. Hanna Kurniawati, at the Robust Decision Making and Learning Lab, The Australian National Univeristy.
   
-  My research direction focuses on building robust general purpose sequential decision making systems with application in robotics. It is my hope to see robots become an essential ingredient in our daily life in the near future, just like smart phones today. To achieve this, today's roboot need to be able to handle uncertainties from the real world and learn useful patterns from its surroundings.
+  My research direction focuses on building robust general purpose sequential decision making systems with application in robotics. 
+  It is my hope to see robots becoming an essential ingredient in our daily life in the future, just like smart phones today. 
+  To achieve this, I want to extent robots' capabilities in handling uncertainties from the real world and efficiently learning useful patterns from the environment.
   
-  In particular, I look into the Partially Observable Markov Decision Process (POMDP) and see how to scale its solutions method for Robotics motion planning under uncertainties. 
-  I investigate in sample efficient reinforcement learning algorithms that smartly collects data and extract statistical patterns to inform deicision makings. 
-  Being able to transfer existing knowledge to a similar domain is yet another way to reduce training resources. 
-  And lastly, I am interesting in considering partially observable settings in reinforcement learning to allivate the learner's brittleness in the face of uncertainties.
+  In particular, I am interested in the Partially Observable Markov Decision Process (POMDP) and designing scalable POMDP solution methods for Robotics motion planning under uncertainties. 
+  On the learning aspects, I look into sample efficient reinforcement learning algorithms, transfer learnings and generalisations under uncertainties.
 
-  Outside of work, I love meeting new people, sharing new ideas, reading books and do many outdoor activities. I am a serious rock climbing enthusiast, and this hobby has became my way of meditation. 
+  Outside of work, I love meeting new people, sharing new ideas, reading books and climbing rocks, the latter has has became my way of meditation :)
 
 content:
 
@@ -73,17 +73,14 @@ content:
           
           I specialised in mechatronics engineering and explored areas like control theory, system dynamics, embedded systems and robotics. 
           
-          Under my science degree, I studied computer science with a focus on AI and ML, and mathematics including analysis, algebra and numerical methods.
-
-          During these 5 years, I had many opportunies to conduct research and join practical student projects. Looking back, I am grateful for having such an intense but execiting learning journey. 
-
+          Under my science degree, I studied computer science with a focus on AI and ML, and mathematics including analysis, algebra and computational maths.
 
   - title: Publications # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
         title: Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling
-        link: <a href="https://arxiv.org/abs/2411.07032" target="_blank" class="link">Paper Link</a>
+        link: Paper Link (https://arxiv.org/abs/2411.07032)
         # link_text: Project Website
         # additional_links:
         #   - title:  ROP-RAS3
@@ -93,7 +90,7 @@ content:
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         description: | # this will include new lines to allow paragraphs
-          This is my first PhD project. I am lucky enough to collabote with Lydia Kavraki's lab and we proposed a novel algorithm that leverage fast motion planning library (VAMP) and the reference-based POMDP to handle online POMDP planning with long horizons. Empirically, we test on many robotic problems and our method outperforms the state-of-the-art methods by multiple factors.
+          This is my first PhD project. I am lucky enough to collabote with Lydia Kavraki's lab to propose a novel algorithm that leverage fast motion planning library (VAMP) and the reference-based POMDP to handle online POMDP planning with long horizons. Empirically, we test on many robotic problems and our method outperforms the state-of-the-art methods by multiple factors.
 
       - layout: top-middle
         title: Recurrent Macro Actions Generator for POMDP Planning
@@ -103,7 +100,7 @@ content:
             icon: fab fa-github
             url: https://github.com/YC-Liang/Recurrent-Macro-Action-Generator
         description: |
-          This is my fourth year undergraduate work that focuses on using recurrent neural networks to handle memories in the form of histories in POMDPs to learn to generate macro actions for POMDP planning. The new architecture boosts the state-of-the-art MAGIC across all tested benchmarks.
+          Here is my fourth year undergraduate work that focuses on using recurrent neural networks to handle memories in the form of histories in POMDPs to learn to generate macro actions for POMDP planning. The new architecture boosts the state-of-the-art MAGIC across all tested benchmarks.
 
       - layout: top-middle
         title: DRT A Lightweight Single Image Deraining Recursive Transformer
@@ -113,7 +110,7 @@ content:
             icon: fab fa-github
             url: https://github.com/YC-Liang/DRT
         description:
-          This is my third year undergraduate work on designing efficient nerual network architecture for single image deraining. In particular, we recursively define transformer blocks to reuse weights to boost performance while keeping memory usages low. The performance has surpassed many big models across different data sets.
+          This is my third year undergraduate work on designing efficient nerual network architecture for single image deraining. In particular, we recursively define transformer blocks to reuse weights to boost performance while keeping memory usages low. The performance surpassed many big models across different data sets at that time.
 
   - title: Other Experiences # Title for the section
     layout: list # Type of content section (list/text)
