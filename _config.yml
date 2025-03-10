@@ -80,7 +80,8 @@ content:
     content:
       - layout: top-middle
         title: Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling
-        link: Paper Link (https://arxiv.org/abs/2411.07032)
+        link: https://arxiv.org/abs/2411.07032
+        link_text: Paper Link
         # link_text: Project Website
         # additional_links:
         #   - title:  ROP-RAS3
