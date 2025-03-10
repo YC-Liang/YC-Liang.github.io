@@ -83,7 +83,7 @@ content:
     content:
       - layout: top-middle
         title: Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling
-        url: "https://arxiv.org/abs/2411.07032"
+        link: "https://arxiv.org/abs/2411.07032"
         # link_text: Project Website
         # additional_links:
         #   - title:  ROP-RAS3
@@ -134,7 +134,7 @@ content:
             During the last year of my undergraduate, I worked under Dr Tirthankar Bandyopadhyay at CSIRO and built a simulation environment for robotic arms to interact with cluttered objects. Specifically, I used the Mujoco physics engine and OMPL library to achieve the goal.
           
   - title: A Little More About Me
-    layout: top-middle
+    layout: text
     content: | # this will include new lines to allow paragraphs
       ![RDL Lab](/images/lab.JPG "RDL Lab")
 
