@@ -79,11 +79,11 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Double Degrees in Bachelor of Engineering (Honours) and Bachelor of Science.
+        title: Bachelor of Engineering (1st Hon) and Bachelor of Science.
         caption: 2019 - 2023
         sub_title: ANU
         description: | # this will include new lines to allow paragraphs
-          The flexibility offered by ANU allows me to do a double degree in Enginnering and Science. 
+          The flexibility offered by ANU allows me to do a double degree in Enginnering and Science.  
           
           I specialised in mechatronics engineering and explored areas like control theory, system dynamics, embedded systems and robotics. 
           
@@ -93,17 +93,19 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
+        title: Squared Family MDPs: Provably Efficient RL with Tractable Representations
+        description: | # this will include new lines to allow paragraphs
+          Liang, Y., Tsuchida, R., Ong, C., and Kurniawati, H., Squared Family MDPs: Provably Efficient RL with Tractable Representations. In 2026 International Conference on Machine Learning (under review).
+
+      - layout: top-middle
+        title: Thinking Fast and Far: Long Horizon Online POMDP Planning via Rapid State Space Sampling
+        description: | # this will include new lines to allow paragraphs
+            Liang, Y., Kim, E., Knoll, J, A., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L.E., Thinking Fast and Far: Long-Horizon Online POMDP Planning via Rapid State Sampling. In 2026 International Journal of Robotics Research (IJRR).
+
+      - layout: top-middle
         title: Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling
         link: https://arxiv.org/abs/2411.07032
         link_text: Paper Link
-        # link_text: Project Website
-        # additional_links:
-        #   - title:  ROP-RAS3
-        #     icon: fab fa-github
-        #     url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         description: | # this will include new lines to allow paragraphs
             Liang, Y., Kim, E., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L.E., 2024. Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling. In 2024 International Symposium of Robotics Research (ISRR).
 
@@ -116,6 +118,7 @@ content:
             icon: fab fa-github
             url: https://github.com/YC-Liang/Recurrent-Macro-Action-Generator
         description: |
+            Liang, Y. and Kurniawati, H., 2023, October. Recurrent macro actions generator for POMDP planning. In 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 2026-2033). IEEE. 
 
       - layout: top-middle
         title: DRT A Lightweight Single Image Deraining Recursive Transformer
@@ -125,7 +128,8 @@ content:
           - title:  DRT
             icon: fab fa-github
             url: https://github.com/YC-Liang/DRT
-        description:
+        description: |
+            Liang, Y., Anwar, S. and Liu, Y., 2022. DRT: A lightweight single image deraining recursive transformer. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 589-598).
 
   - title: Other Experiences # Title for the section
     layout: list # Type of content section (list/text)
