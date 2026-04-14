@@ -62,21 +62,21 @@ about_content: | # this will include new lines to allow paragraphs
 
 content:
 
-- title: Graduate Education # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Double Degrees in Bachelor of Engineering (First Class Honours) and Bachelor of Science.
-        caption: 2024 - Current
-        sub_title: @ ANU
-        description: | # this will include new lines to allow paragraphs
-          My PhD thesis focuses on designing general, robust and efficient intelligent (AI) systems for robotics. Specifically, I am interested in Partially Observable Markov Decision Process, reinforcement learning and generative robotic models. 
+  - title: Graduate Education # Title for the section
+      layout: list # Type of content section (list/text)
+      content:
+        - layout: left
+          title: PhD
+          caption: 2024 - Current
+          sub_title: @ ANU
+          description: | # this will include new lines to allow paragraphs
+            My PhD thesis focuses on designing general, robust and efficient intelligent (AI) systems for robotics. Specifically, I am interested in Partially Observable Markov Decision Process, reinforcement learning and generative robotic models. 
 
   - title: Undergraduate Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Double Degrees in Bachelor of Engineering (First Class Honours) and Bachelor of Science.
+        title: Double Degrees in Bachelor of Engineering (Honours) and Bachelor of Science.
         caption: 2019 - 2023
         sub_title: @ ANU
         description: | # this will include new lines to allow paragraphs
