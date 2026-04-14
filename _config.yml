@@ -98,7 +98,7 @@ content:
             Liang, Y., Tsuchida, R., Ong, C., and Kurniawati, H., Squared Family MDPs: Provably Efficient RL with Tractable Representations. In 2026 International Conference on Machine Learning (under review).
 
       - layout: top-middle
-        title: Thinking Fast and Far: Long Horizon Online POMDP Planning via Rapid State Space Sampling
+        title: Thinking Fast and Far Long Horizon Online POMDP Planning via Rapid State Space Sampling
         description: | # this will include new lines to allow paragraphs
             Liang, Y., Kim, E., Knoll, J, A., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L.E., Thinking Fast and Far: Long-Horizon Online POMDP Planning via Rapid State Sampling. In 2026 International Journal of Robotics Research (IJRR).
 
