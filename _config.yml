@@ -61,7 +61,6 @@ about_content: | # this will include new lines to allow paragraphs
   Outside of work, I love meeting new people, sharing new ideas, reading books and climbing rocks, the latter has has became my way of meditation :)
 
 content:
-
   - title: Graduate Education # Title for the section
       layout: list # Type of content section (list/text)
       content:
