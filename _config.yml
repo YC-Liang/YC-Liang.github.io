@@ -125,13 +125,13 @@ content:
   - title: Other Experiences # Title for the section
     layout: list # Type of content section (list/text)
     content:
-    - layout: left
-      title: Maincode AI Residency Program
-      # link_text: boringcompany.com
-      sub_title: Diffusion Policy Fine-Tuning with Rinforcement Learning
-      caption: Mar 2026 - Current
-      description: | # this will include new lines to allow paragraphs
-          I collaborate with Dr Yue Yang from Maincode and work on designing sample efficient RL fine tuning algorithms for pre-trained diffusion policy.
+      - layout: left
+        title: Maincode AI Residency Program
+        # link_text: boringcompany.com
+        sub_title: Diffusion Policy Fine-Tuning with Rinforcement Learning
+        caption: Mar 2026 - Current
+        description: | # this will include new lines to allow paragraphs
+            I collaborate with Dr Yue Yang from Maincode and work on designing sample efficient RL fine tuning algorithms for pre-trained diffusion policy.
 
       - layout: left
         title: ANU Summer Research Scholarships
@@ -146,7 +146,7 @@ content:
         link_text: https://www.csiro.au/en/
         caption: Nov 2022 - Mar 2023
         description: |
-            During the last year of my undergraduate, I worked under Dr Tirthankar Bandyopadhyay at CSIRO and built a simulation environment for robotic arms to interact with cluttered objects. Specifically, I used the Mujoco physics engine and OMPL library to achieve the goal.
+            During the last year of my undergraduate, I worked with Dr Tirthankar Bandyopadhyay at CSIRO and built a simulation environment for robotic arms to interact with cluttered objects. Specifically, I used the Mujoco physics engine and OMPL library to achieve the goal.
           
   - title: More About Me
     layout: text
