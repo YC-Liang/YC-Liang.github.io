@@ -126,12 +126,12 @@ content:
     layout: list # Type of content section (list/text)
     content:
     - layout: left
-        title: Maincode AI Residency Program
-        # link_text: boringcompany.com
-        sub_title: Diffusion Policy Fine-Tuning with Rinforcement Learning
-        caption: Mar 2026 - Current
-        description: | # this will include new lines to allow paragraphs
-            I collaborate with Dr Yue Yang from Maincode and work on designing sample efficient RL fine tuning algorithms for pre-trained diffusion policy.
+      title: Maincode AI Residency Program
+      # link_text: boringcompany.com
+      sub_title: Diffusion Policy Fine-Tuning with Rinforcement Learning
+      caption: Mar 2026 - Current
+      description: | # this will include new lines to allow paragraphs
+          I collaborate with Dr Yue Yang from Maincode and work on designing sample efficient RL fine tuning algorithms for pre-trained diffusion policy.
 
       - layout: left
         title: ANU Summer Research Scholarships
