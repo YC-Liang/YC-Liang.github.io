@@ -62,13 +62,23 @@ about_content: | # this will include new lines to allow paragraphs
 
 content:
 
-  - title: Education # Title for the section
+- title: Graduate Education # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: The Australian National University
+        title: Double Degrees in Bachelor of Engineering (First Class Honours) and Bachelor of Science.
+        caption: 2024 - Current
+        sub_title: @ ANU
+        description: | # this will include new lines to allow paragraphs
+          My PhD thesis focuses on designing general, robust and efficient intelligent (AI) systems for robotics. Specifically, I am interested in Partially Observable Markov Decision Process, reinforcement learning and generative robotic models. 
+
+  - title: Undergraduate Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Double Degrees in Bachelor of Engineering (First Class Honours) and Bachelor of Science.
         caption: 2019 - 2023
-        sub_title: Double Degrees in Bachelor of Engineering (First Class Honours) and Bachelor of Science.
+        sub_title: @ ANU
         description: | # this will include new lines to allow paragraphs
           The flexibility offered by ANU allows me to do a double degree in Enginnering and Science. 
           
@@ -92,7 +102,6 @@ content:
           #   icon: fab fa-github
           #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         description: | # this will include new lines to allow paragraphs
-          This is my first PhD project. I am lucky enough to collabote with Lydia Kavraki's lab to propose a novel algorithm that leverage fast motion planning library (VAMP) and the reference-based POMDP to handle online POMDP planning with long horizons. Empirically, we test on many robotic problems and our method outperforms the state-of-the-art methods by multiple factors.
 
       - layout: top-middle
         title: Recurrent Macro Actions Generator for POMDP Planning
@@ -103,7 +112,6 @@ content:
             icon: fab fa-github
             url: https://github.com/YC-Liang/Recurrent-Macro-Action-Generator
         description: |
-          Here is my fourth year undergraduate work that focuses on using recurrent neural networks to handle memories in the form of histories in POMDPs to learn to generate macro actions for POMDP planning. The new architecture boosts the state-of-the-art MAGIC across all tested benchmarks.
 
       - layout: top-middle
         title: DRT A Lightweight Single Image Deraining Recursive Transformer
@@ -114,13 +122,20 @@ content:
             icon: fab fa-github
             url: https://github.com/YC-Liang/DRT
         description:
-          This is my third year undergraduate work on designing efficient nerual network architecture for single image deraining. In particular, we recursively define transformer blocks to reuse weights to boost performance while keeping memory usages low. The performance surpassed many big models across different data sets at that time.
 
   - title: Other Experiences # Title for the section
     layout: list # Type of content section (list/text)
     content:
+    - layout: left
+        title: Maincode AI Residency Program
+        # link_text: boringcompany.com
+        sub_title: Diffusion Policy Fine-Tuning with Rinforcement Learning
+        caption: Mar 2026 - Current
+        description: | # this will include new lines to allow paragraphs
+            I collaborate with Dr Yue Yang from Maincode and work on designing sample efficient RL fine tuning algorithms for pre-trained diffusion policy.
+
       - layout: left
-        title: Summer Research Scholarships
+        title: ANU Summer Research Scholarships
         # link_text: boringcompany.com
         sub_title: Online Attention in Social Media
         caption: Nov 2021 - Feb 2022
