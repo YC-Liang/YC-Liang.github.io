@@ -71,9 +71,9 @@ content:
         description: | # this will include new lines to allow paragraphs
           My PhD thesis focuses on designing general, robust and efficient intelligent (AI) systems for robotics. Specifically, I am interested in Partially Observable Markov Decision Process (POMDPs), reinforcement learning (RL) and generative models.
 
-          Specific topics include motion planning under uncertainties, provably efficient RL with parametric models and regret bounds, and diffusin policy fine-tuning with RL.
+          Specific topics include motion planning under uncertainties, provably efficient parametric RL, and diffusion policy fine-tuning with RL.
 
-          See below for details on publications.
+          Broadly speaking, I am pretty interested in any topic related to sequential learning under uncertainties!
 
   - title: Undergraduate Education # Title for the section
     layout: list # Type of content section (list/text)
