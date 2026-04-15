@@ -92,24 +92,24 @@ content:
   - title: Publications # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
+      - layout: left
         title: Squared Family MDPs Provably Efficient RL with Tractable Representations
         description: | # this will include new lines to allow paragraphs
             Liang, Y., Tsuchida, R., Ong, C., and Kurniawati, H., Squared Family MDPs: Provably Efficient RL with Tractable Representations. In 2026 International Conference on Machine Learning (under review).
 
-      - layout: top-middle
+      - layout: left
         title: Thinking Fast and Far Long Horizon Online POMDP Planning via Rapid State Space Sampling
         description: | # this will include new lines to allow paragraphs
             Liang, Y., Kim, E., Knoll, J, A., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L.E., Thinking Fast and Far: Long-Horizon Online POMDP Planning via Rapid State Sampling. In 2026 International Journal of Robotics Research (IJRR).
 
-      - layout: top-middle
+      - layout: left
         title: Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling
         link: https://arxiv.org/abs/2411.07032
         link_text: Paper Link
         description: | # this will include new lines to allow paragraphs
             Liang, Y., Kim, E., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L.E., 2024. Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling. In 2024 International Symposium of Robotics Research (ISRR).
 
-      - layout: top-middle
+      - layout: left
         title: Recurrent Macro Actions Generator for POMDP Planning
         link: https://ieeexplore.ieee.org/abstract/document/10341759?casa_token=y3mzX6uneXcAAAAA:j1z44RjTuBVlwqLZPj39g4tGr-kxfx5KJE9yJniQ4hPNtEi4KhHuTsojb4S8KlmJS7fjOH2LF3Lp
         link_text: Paper Link
@@ -120,7 +120,7 @@ content:
         description: |
             Liang, Y. and Kurniawati, H., 2023, October. Recurrent macro actions generator for POMDP planning. In 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (pp. 2026-2033). IEEE. 
 
-      - layout: top-middle
+      - layout: left
         title: DRT A Lightweight Single Image Deraining Recursive Transformer
         link: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.html
         link_text: Paper Link
