@@ -34,11 +34,10 @@
       <a class="nav__logo" href="#top" aria-label="Back to top">yc<span>.</span>liang</a>
       <nav class="nav__links" id="nav-links" aria-label="Primary">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
-        <a href="#beyond">Beyond the lab</a>
-        <a href="#contact" class="nav__cta">Say hi</a>
+        <a href="#education">Education</a>
+        <a href="mailto:yuanchu.liang@anu.edu.au" class="nav__cta">Say hi</a>
       </nav>
       <div class="nav__tools">
         <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
@@ -60,17 +59,15 @@
         <div class="hero__text">
           <p class="kicker reveal"><span class="pulse" aria-hidden="true"></span> PhD candidate · Australian National University</p>
           <h1 id="hero-title" class="hero__title reveal">
-            Yuanchu<br><em>“James”</em> Liang
+            Yuanchu<br>Liang
           </h1>
           <p class="hero__lead reveal">
-            I build robots that make <mark>good decisions</mark> when the world refuses to sit still,
-            drawing on planning under uncertainty, reinforcement learning and generative policies.
+            Endeavoured to understand and design robots that can <mark>talk, see, reason and do</mark>.
           </p>
           <ul class="tags reveal" aria-label="Research areas">
-            <li>Robotics</li>
+            <li>Robotic Learning</li>
             <li>Reinforcement learning</li>
             <li>POMDPs</li>
-            <li>Diffusion policies</li>
           </ul>
           <div class="hero__actions reveal">
             <a class="btn btn--primary" href="#publications">
@@ -93,8 +90,23 @@
         </div>
 
         <figure class="hero__portrait reveal">
-          <div class="portrait">
-            <img src="images/web/portrait.jpg" alt="Portrait of Yuanchu (James) Liang in a navy suit" width="800" height="1200" fetchpriority="high">
+          <div class="portrait-wrap">
+            <button class="portrait" id="portrait-flip" type="button" aria-label="Portrait of Yuanchu Liang. Flip to see a climbing photo.">
+              <img class="portrait__img is-top" src="images/web/portrait.jpg" alt="" width="800" height="1200" fetchpriority="high"
+                   data-label="Portrait of Yuanchu Liang. Flip to see a climbing photo.">
+              <img class="portrait__img portrait__img--climb" src="images/web/climb1.jpg" alt="" width="800" height="1200" decoding="async"
+                   data-label="Yuanchu lead climbing a sandstone cliff above a valley. Flip back to the portrait.">
+            </button>
+            <svg class="peel" aria-hidden="true">
+              <defs>
+                <linearGradient id="peel-grad" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" class="peel__stop-a"/>
+                  <stop offset=".35" class="peel__stop-b"/>
+                  <stop offset="1" class="peel__stop-c"/>
+                </linearGradient>
+              </defs>
+              <polygon class="peel__flap" fill="url(#peel-grad)" points=""/>
+            </svg>
           </div>
           <span class="sticker sticker--a" aria-hidden="true">PhD · year 3</span>
           <span class="sticker sticker--b" aria-hidden="true">35.3°S, 149.1°E</span>
@@ -102,7 +114,7 @@
       </div>
 
       <p class="hero__hint container" aria-hidden="true">
-        <span class="mono">↳ the dots are a particle filter tracking your cursor. <b>Click</b> to kidnap the robot.</span>
+        <span class="mono">↳ the dots are a particle filter tracking your cursor. <b>Click</b> to kidnap the robot, or flip my photo.</span>
         <span class="mono" id="pf-status"></span>
       </p>
     </section>
@@ -132,22 +144,17 @@
         <div class="about">
           <div class="about__body reveal">
             <p class="lede">
-              I’m Yuanchu, though most people call me James. I’m a computer science PhD candidate at the
-              <a href="https://www.anu.edu.au" target="_blank" rel="noopener">Australian National University</a> (ANU) in Canberra,
-              where I work in the Robust Decision Making and Learning Lab with Prof. Hanna Kurniawati.
+              I’m Yuanchu, a computer science PhD candidate at the
+              <a href="https://www.anu.edu.au" target="_blank" rel="noopener">Australian National University</a> (ANU),
+              working with Prof. Hanna Kurniawati in the Robust Decision Making and Learning Lab.
             </p>
             <p>
-              I finished high school in Adelaide, then completed a double degree in Engineering (First-Class Honours) and Science at ANU.
-              That mix still shapes how I work: I believe great applications are rooted in solid theory and sharpened by getting
-              things running on real hardware.
+              I build <strong>robust, general-purpose decision-making systems for robots</strong>: robots that cope with
+              real-world uncertainty and learn efficiently from experience. Before my PhD, I completed a double degree in
+              Engineering (First-Class Honours) and Science at ANU.
             </p>
             <p>
-              My research is about building <strong>robust, general-purpose sequential decision-making systems</strong> for robotics.
-              I’d love to see robots become as ordinary a part of daily life as smartphones are today. Getting there means robots that
-              cope gracefully with real-world uncertainty and learn useful patterns from their environment efficiently.
-            </p>
-            <p>
-              Outside work, I love meeting new people, swapping ideas, reading and climbing rocks. Climbing has become my way of meditating :)
+              Outside work, I love meeting new people, reading and climbing rocks, which has become my way of meditating :)
             </p>
           </div>
 
@@ -157,73 +164,12 @@
               <div><dt>based_in</dt><dd>Canberra, Australia</dd></div>
               <div><dt>lab</dt><dd>Robust Decision Making &amp; Learning Lab, ANU</dd></div>
               <div><dt>supervisors</dt><dd>Hanna Kurniawati (ANU, primary)<br>Cheng Soon Ong (CSIRO)<br>Marcus Hutter (DeepMind)</dd></div>
-              <div><dt>now</dt><dd>Fine-tuning diffusion policies with RL; provably efficient RL</dd></div>
               <div><dt>speaks</dt><dd>English, Mandarin</dd></div>
               <div><dt>off_duty</dt><dd>Rock climbing 🧗</dd></div>
             </dl>
           </aside>
         </div>
 
-        <ul class="stats reveal" aria-label="Quick numbers">
-          <li><span class="stats__n">6</span><span class="stats__l">papers, incl. NeurIPS &amp; IJRR</span></li>
-          <li><span class="stats__n">3,000</span><span class="stats__l">step planning horizons tackled online</span></li>
-          <li><span class="stats__n">6.74<small>/7</small></span><span class="stats__l">undergraduate GPA, First-Class Honours</span></li>
-          <li><span class="stats__n">∞</span><span class="stats__l">climbing routes still on the list</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ RESEARCH ============ -->
-    <section class="section section--alt" id="research" aria-labelledby="research-title">
-      <div class="container">
-        <header class="section__head reveal">
-          <span class="section__num">§02</span>
-          <h2 id="research-title">What I work on</h2>
-          <p class="section__sub">Broadly, anything involving sequential decisions under uncertainty. Lately, three threads in particular:</p>
-        </header>
-
-        <div class="cards">
-          <article class="card card--teal reveal">
-            <div class="card__eq mono" aria-hidden="true">b′(s′) ∝ O(o|s′,a) Σ<sub>s</sub> T(s′|s,a) b(s)</div>
-            <h3>Planning under uncertainty</h3>
-            <p>
-              Partially observable Markov decision processes (POMDPs) give robots a principled way to act when they can’t see everything.
-              I design scalable online POMDP solvers that use fast sampling-based motion planning to look thousands of steps ahead.
-            </p>
-            <span class="card__tag mono">POMDPs · motion planning · macro-actions</span>
-          </article>
-
-          <article class="card card--orange reveal">
-            <div class="card__eq mono" aria-hidden="true">Q*(s,a) = r + γ 𝔼[max<sub>a′</sub> Q*(s′,a′)]</div>
-            <h3>Provably efficient RL</h3>
-            <p>
-              I’m interested in when and why reinforcement learning works. My recent theory work develops MDP models with
-              tractable representations that come with provable sample-efficiency guarantees.
-            </p>
-            <span class="card__tag mono">RL theory · representations · sample efficiency</span>
-          </article>
-
-          <article class="card card--violet reveal">
-            <div class="card__eq mono" aria-hidden="true">x<sub>t−1</sub> = μ<sub>θ</sub>(x<sub>t</sub>,t) + σ<sub>t</sub>z</div>
-            <h3>Fine-tuning generative policies</h3>
-            <p>
-              Pretrained diffusion policies and vision-language-action models are powerful but rarely perfect.
-              I develop RL methods that fine-tune them efficiently, from simulated benchmarks to real robots and foundation models like π<sub>0</sub>.
-            </p>
-            <span class="card__tag mono">diffusion policies · VLAs · real robots</span>
-          </article>
-        </div>
-
-        <div class="collab reveal">
-          <span class="mono collab__label">Collaborators &amp; co-authors</span>
-          <ul>
-            <li>Lydia Kavraki <span>Rice</span></li>
-            <li>Zachary Kingston <span>Purdue</span></li>
-            <li>Wil Thomason <span>Boston Dynamics</span></li>
-            <li>Russell Tsuchida <span>Monash</span></li>
-            <li>Yue Yang <span>Maincode</span></li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -231,7 +177,7 @@
     <section class="section" id="publications" aria-labelledby="pubs-title">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__num">§03</span>
+          <span class="section__num">§02</span>
           <h2 id="pubs-title">Publications</h2>
           <p class="section__sub">Newest first. Filter by topic, follow the links, or copy a citation in one click.</p>
         </header>
@@ -384,7 +330,7 @@
     <section class="section section--alt" id="experience" aria-labelledby="exp-title">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__num">§04</span>
+          <span class="section__num">§03</span>
           <h2 id="exp-title">Experience</h2>
           <p class="section__sub">Research, industry, teaching, and a few rockets along the way.</p>
         </header>
@@ -459,7 +405,7 @@
     <section class="section" id="education" aria-labelledby="edu-title">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__num">§05</span>
+          <span class="section__num">§04</span>
           <h2 id="edu-title">Education &amp; recognition</h2>
         </header>
 
@@ -504,7 +450,7 @@
     <section class="section section--alt" id="toolbox" aria-labelledby="tools-title">
       <div class="container">
         <header class="section__head reveal">
-          <span class="section__num">§06</span>
+          <span class="section__num">§05</span>
           <h2 id="tools-title">Toolbox</h2>
           <p class="section__sub">Full-stack robotics: from theory on a whiteboard to a teleoperated robot arm collecting data.</p>
         </header>
@@ -530,47 +476,6 @@
       </div>
     </section>
 
-    <!-- ============ BEYOND ============ -->
-    <section class="section" id="beyond" aria-labelledby="beyond-title">
-      <div class="container">
-        <header class="section__head reveal">
-          <span class="section__num">§07</span>
-          <h2 id="beyond-title">Beyond the lab</h2>
-          <p class="section__sub">Good people, friendly robots and a lot of sandstone.</p>
-        </header>
-
-        <div class="gallery">
-          <figure class="photo photo--wide reveal">
-            <img src="images/web/lab.jpg" alt="Members of the Robust Decision Making and Learning Lab at ANU posing with a robot arm and letter blocks spelling ANU and ROBOT" width="1800" height="1200" loading="lazy">
-            <figcaption><span class="mono">fig. 1</span> The RDL Lab crew at ANU, plus a few robot friends.</figcaption>
-          </figure>
-          <figure class="photo reveal">
-            <img src="images/web/climb.jpg" alt="Four photos of Yuanchu rock climbing on sandstone cliffs" width="1100" height="1100" loading="lazy">
-            <figcaption><span class="mono">fig. 2</span> Weekend meditation, vertical edition.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="container contact__inner reveal">
-        <p class="kicker">§08 · get in touch</p>
-        <h2 id="contact-title">Let’s talk robots, RL,<br>or <em>climbing routes</em>.</h2>
-        <p class="contact__text">I’m always happy to chat about research, collaborations or a thought-provoking idea. My inbox is open.</p>
-        <div class="contact__row">
-          <a class="contact__email" href="mailto:yuanchu.liang@anu.edu.au">yuanchu.liang@anu.edu.au</a>
-          <button class="btn btn--ghost btn--small" type="button" id="copy-email" data-copy="yuanchu.liang@anu.edu.au">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-            Copy
-          </button>
-        </div>
-        <div class="contact__links">
-          <a href="https://github.com/YC-Liang" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/yuanchu-liang-89485320b" target="_blank" rel="noopener">LinkedIn ↗</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">

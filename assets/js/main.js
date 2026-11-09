@@ -65,7 +65,7 @@
         navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['about', 'research', 'publications', 'experience', 'education', 'toolbox', 'beyond', 'contact'].forEach(function (id) {
+    ['about', 'publications', 'experience', 'education', 'toolbox'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) sectionObs.observe(el);
     });
@@ -119,13 +119,6 @@
       copyText(citeBtn.getAttribute('data-cite'))
         .then(function () { showToast('Citation copied to clipboard ✓'); })
         .catch(function () { showToast('Couldn’t copy. Please select the text manually.'); });
-      return;
-    }
-    var copyBtn = e.target.closest('[data-copy]');
-    if (copyBtn) {
-      copyText(copyBtn.getAttribute('data-copy'))
-        .then(function () { showToast('Email copied. Talk soon!'); })
-        .catch(function () { showToast('Couldn’t copy. Please select the text manually.'); });
     }
   });
 
@@ -147,6 +140,118 @@
       });
     });
   });
+
+  /* =========================================================
+     Portrait: a paper corner that peels back to swap photos.
+     The fold is the line x + y = c in the photo's own pixels;
+     everything past it is cut from the top photo and mirrored
+     across the fold to draw the lifted flap.
+     ========================================================= */
+  (function portraitPeel() {
+    var btn = document.getElementById('portrait-flip');
+    if (!btn) return;
+    var imgs = btn.querySelectorAll('.portrait__img');
+    var svg = btn.parentNode.querySelector('.peel');
+    var flap = svg.querySelector('.peel__flap');
+    var grad = svg.querySelector('#peel-grad');
+    var top = 0;                       // index of the photo currently on top
+    var W = 0, H = 0;
+    var lift = 0;                      // how far the corner is peeled, in px along x + y
+    var IDLE = 58, HOVER = 120;
+    var raf = 0, flipping = false, hovering = false;
+
+    function measure() { W = btn.clientWidth; H = btn.clientHeight; }
+
+    // Sutherland–Hodgman against one half-plane: keep points where sign·(x + y − c) ≤ 0
+    function clip(poly, c, sign) {
+      var out = [];
+      for (var i = 0; i < poly.length; i++) {
+        var P = poly[i], Q = poly[(i + 1) % poly.length];
+        var fp = sign * (P[0] + P[1] - c), fq = sign * (Q[0] + Q[1] - c);
+        if (fp <= 0) out.push(P);
+        if ((fp <= 0) !== (fq <= 0)) {
+          var t = fp / (fp - fq);
+          out.push([P[0] + (Q[0] - P[0]) * t, P[1] + (Q[1] - P[1]) * t]);
+        }
+      }
+      return out;
+    }
+    function pts(poly, unit) {
+      return poly.map(function (p) { return p[0].toFixed(1) + unit + ' ' + p[1].toFixed(1) + unit; }).join(',');
+    }
+
+    function render() {
+      var img = imgs[top];
+      var full = W + H, c = full - lift;
+      if (lift <= 0) {
+        img.style.clipPath = '';
+        flap.setAttribute('points', '');
+        return;
+      }
+      var rect = [[0, 0], [W, 0], [W, H], [0, H]];
+      var keep = clip(rect, c, 1);
+      var cut = clip(rect, c, -1);
+      img.style.clipPath = keep.length > 2 ? 'polygon(' + pts(keep, 'px') + ')' : 'polygon(0 0, 0 0, 0 0)';
+      // Mirror the cut-away region across the fold: (x, y) → (c − y, c − x)
+      var mirrored = cut.map(function (p) { return [c - p[1], c - p[0]]; });
+      flap.setAttribute('points', mirrored.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' '));
+      // Shade from the crease (darker) to the lifted tip (lighter)
+      grad.setAttribute('x1', (c + W - H) / 2); grad.setAttribute('y1', (c - W + H) / 2);
+      grad.setAttribute('x2', c - H); grad.setAttribute('y2', c - W);
+      // Fade the flap out as it flies off the frame
+      flap.style.opacity = Math.max(0, Math.min(1, c / (0.3 * full))).toFixed(3);
+    }
+
+    function easeInOut(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+    function easeOut(k) { return 1 - Math.pow(1 - k, 3); }
+    function tweenTo(target, dur, ease, done) {
+      cancelAnimationFrame(raf);
+      var from = lift, t0 = performance.now();
+      if (reduceMotion) dur = 0;
+      (function tick() {
+        var k = dur ? Math.max(0, Math.min(1, (performance.now() - t0) / dur)) : 1;
+        lift = from + (target - from) * ease(k);
+        render();
+        if (k < 1) raf = requestAnimationFrame(tick);
+        else if (done) done();
+      })();
+    }
+    function rest() { return hovering && !reduceMotion ? HOVER : IDLE; }
+
+    function flip() {
+      if (flipping) return;
+      flipping = true;
+      measure();
+      tweenTo(W + H, 950, easeInOut, function () {
+        // The revealed photo becomes the new top sheet, lying flat
+        imgs[top].classList.remove('is-top');
+        imgs[top].style.clipPath = '';
+        top = 1 - top;
+        imgs[top].classList.add('is-top');
+        btn.setAttribute('aria-label', imgs[top].getAttribute('data-label'));
+        lift = 0;
+        render();
+        flipping = false;
+        tweenTo(rest(), 420, easeOut);
+      });
+    }
+
+    btn.addEventListener('click', flip);
+    btn.addEventListener('pointerenter', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      hovering = true;
+      if (!flipping) tweenTo(HOVER, 320, easeOut);
+    });
+    btn.addEventListener('pointerleave', function () {
+      hovering = false;
+      if (!flipping) tweenTo(IDLE, 320, easeOut);
+    });
+    window.addEventListener('resize', function () { measure(); render(); });
+
+    measure();
+    // Curl the corner a little once the page has settled, as a hint
+    setTimeout(function () { measure(); tweenTo(IDLE, 600, easeOut); }, reduceMotion ? 0 : 900);
+  })();
 
   /* =========================================================
      Hero: a particle filter tracking the visitor's cursor.
