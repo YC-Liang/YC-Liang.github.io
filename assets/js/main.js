@@ -65,7 +65,7 @@
         navLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['about', 'publications', 'experience', 'education', 'toolbox'].forEach(function (id) {
+    ['about', 'publications', 'experience', 'education'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) sectionObs.observe(el);
     });
