@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuanchu (James) Liang · Robotics &amp; RL Researcher</title>
+  <meta name="description" content="Yuanchu (James) Liang is a PhD candidate at the Australian National University working on reinforcement learning, POMDP planning and probabilistic decision-making for robotics.">
+  <meta name="author" content="Yuanchu Liang">
+  <meta property="og:title" content="Yuanchu (James) Liang · Robotics &amp; RL Researcher">
+  <meta property="og:description" content="PhD candidate at ANU building robots that make good decisions under uncertainty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yc-liang.github.io/">
+  <meta property="og:image" content="https://yc-liang.github.io/images/web/portrait.jpg">
+  <meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1220" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a class="nav__logo" href="#top" aria-label="Back to top">yc<span>.</span>liang</a>
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#beyond">Beyond the lab</a>
+        <a href="#contact" class="nav__cta">Say hi</a>
+      </nav>
+      <div class="nav__tools">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        </button>
+        <button class="icon-btn nav__menu" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <canvas class="hero__canvas" id="belief-canvas" aria-hidden="true"></canvas>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="kicker reveal"><span class="pulse" aria-hidden="true"></span> PhD candidate · Australian National University</p>
+          <h1 id="hero-title" class="hero__title reveal">
+            Yuanchu<br><em>“James”</em> Liang
+          </h1>
+          <p class="hero__lead reveal">
+            I build robots that make <mark>good decisions</mark> when the world refuses to sit still,
+            drawing on planning under uncertainty, reinforcement learning and generative policies.
+          </p>
+          <ul class="tags reveal" aria-label="Research areas">
+            <li>Robotics</li>
+            <li>Reinforcement learning</li>
+            <li>POMDPs</li>
+            <li>Diffusion policies</li>
+          </ul>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#publications">
+              See my research
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="mailto:yuanchu.liang@anu.edu.au">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+              Email me
+            </a>
+            <div class="socials">
+              <a class="icon-btn" href="https://github.com/YC-Liang" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              </a>
+              <a class="icon-btn" href="https://www.linkedin.com/in/yuanchu-liang-89485320b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.83v1.54h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.63V21h-4z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero__portrait reveal">
+          <div class="portrait">
+            <img src="images/web/portrait.jpg" alt="Portrait of Yuanchu (James) Liang in a navy suit" width="800" height="1200" fetchpriority="high">
+          </div>
+          <span class="sticker sticker--a" aria-hidden="true">PhD · year 3</span>
+          <span class="sticker sticker--b" aria-hidden="true">35.3°S, 149.1°E</span>
+        </figure>
+      </div>
+
+      <p class="hero__hint container" aria-hidden="true">
+        <span class="mono">↳ the dots are a particle filter tracking your cursor. <b>Click</b> to kidnap the robot.</span>
+        <span class="mono" id="pf-status"></span>
+      </p>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-label="Highlights">
+      <div class="marquee__track">
+        <ul>
+          <li>NeurIPS 2026</li><li>IJRR 2026</li><li>ISRR 2024</li><li>IROS 2023</li><li>CVPR Workshops 2022</li>
+          <li>Gold Reviewer · ICML 2026</li><li>Maincode AI Resident</li><li>CSIRO Data61</li><li>First-Class Honours</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>NeurIPS 2026</li><li>IJRR 2026</li><li>ISRR 2024</li><li>IROS 2023</li><li>CVPR Workshops 2022</li>
+          <li>Gold Reviewer · ICML 2026</li><li>Maincode AI Resident</li><li>CSIRO Data61</li><li>First-Class Honours</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§01</span>
+          <h2 id="about-title">Nice to meet you</h2>
+        </header>
+
+        <div class="about">
+          <div class="about__body reveal">
+            <p class="lede">
+              I’m Yuanchu, though most people call me James. I’m a computer science PhD candidate at the
+              <a href="https://www.anu.edu.au" target="_blank" rel="noopener">Australian National University</a> (ANU) in Canberra,
+              where I work in the Robust Decision Making and Learning Lab with Prof. Hanna Kurniawati.
+            </p>
+            <p>
+              I finished high school in Adelaide, then completed a double degree in Engineering (First-Class Honours) and Science at ANU.
+              That mix still shapes how I work: I believe great applications are rooted in solid theory and sharpened by getting
+              things running on real hardware.
+            </p>
+            <p>
+              My research is about building <strong>robust, general-purpose sequential decision-making systems</strong> for robotics.
+              I’d love to see robots become as ordinary a part of daily life as smartphones are today. Getting there means robots that
+              cope gracefully with real-world uncertainty and learn useful patterns from their environment efficiently.
+            </p>
+            <p>
+              Outside work, I love meeting new people, swapping ideas, reading and climbing rocks. Climbing has become my way of meditating :)
+            </p>
+          </div>
+
+          <aside class="glance reveal" aria-label="At a glance">
+            <h3 class="glance__title mono">at_a_glance.yaml</h3>
+            <dl>
+              <div><dt>based_in</dt><dd>Canberra, Australia</dd></div>
+              <div><dt>lab</dt><dd>Robust Decision Making &amp; Learning Lab, ANU</dd></div>
+              <div><dt>supervisors</dt><dd>Hanna Kurniawati (ANU, primary)<br>Cheng Soon Ong (CSIRO)<br>Marcus Hutter (DeepMind)</dd></div>
+              <div><dt>now</dt><dd>Fine-tuning diffusion policies with RL; provably efficient RL</dd></div>
+              <div><dt>speaks</dt><dd>English, Mandarin</dd></div>
+              <div><dt>off_duty</dt><dd>Rock climbing 🧗</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <ul class="stats reveal" aria-label="Quick numbers">
+          <li><span class="stats__n">6</span><span class="stats__l">papers, incl. NeurIPS &amp; IJRR</span></li>
+          <li><span class="stats__n">3,000</span><span class="stats__l">step planning horizons tackled online</span></li>
+          <li><span class="stats__n">6.74<small>/7</small></span><span class="stats__l">undergraduate GPA, First-Class Honours</span></li>
+          <li><span class="stats__n">∞</span><span class="stats__l">climbing routes still on the list</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section section--alt" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§02</span>
+          <h2 id="research-title">What I work on</h2>
+          <p class="section__sub">Broadly, anything involving sequential decisions under uncertainty. Lately, three threads in particular:</p>
+        </header>
+
+        <div class="cards">
+          <article class="card card--teal reveal">
+            <div class="card__eq mono" aria-hidden="true">b′(s′) ∝ O(o|s′,a) Σ<sub>s</sub> T(s′|s,a) b(s)</div>
+            <h3>Planning under uncertainty</h3>
+            <p>
+              Partially observable Markov decision processes (POMDPs) give robots a principled way to act when they can’t see everything.
+              I design scalable online POMDP solvers that use fast sampling-based motion planning to look thousands of steps ahead.
+            </p>
+            <span class="card__tag mono">POMDPs · motion planning · macro-actions</span>
+          </article>
+
+          <article class="card card--orange reveal">
+            <div class="card__eq mono" aria-hidden="true">Q*(s,a) = r + γ 𝔼[max<sub>a′</sub> Q*(s′,a′)]</div>
+            <h3>Provably efficient RL</h3>
+            <p>
+              I’m interested in when and why reinforcement learning works. My recent theory work develops MDP models with
+              tractable representations that come with provable sample-efficiency guarantees.
+            </p>
+            <span class="card__tag mono">RL theory · representations · sample efficiency</span>
+          </article>
+
+          <article class="card card--violet reveal">
+            <div class="card__eq mono" aria-hidden="true">x<sub>t−1</sub> = μ<sub>θ</sub>(x<sub>t</sub>,t) + σ<sub>t</sub>z</div>
+            <h3>Fine-tuning generative policies</h3>
+            <p>
+              Pretrained diffusion policies and vision-language-action models are powerful but rarely perfect.
+              I develop RL methods that fine-tune them efficiently, from simulated benchmarks to real robots and foundation models like π<sub>0</sub>.
+            </p>
+            <span class="card__tag mono">diffusion policies · VLAs · real robots</span>
+          </article>
+        </div>
+
+        <div class="collab reveal">
+          <span class="mono collab__label">Collaborators &amp; co-authors</span>
+          <ul>
+            <li>Lydia Kavraki <span>Rice</span></li>
+            <li>Zachary Kingston <span>Purdue</span></li>
+            <li>Wil Thomason <span>Boston Dynamics</span></li>
+            <li>Russell Tsuchida <span>Monash</span></li>
+            <li>Yue Yang <span>Maincode</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section" id="publications" aria-labelledby="pubs-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§03</span>
+          <h2 id="pubs-title">Publications</h2>
+          <p class="section__sub">Newest first. Filter by topic, follow the links, or copy a citation in one click.</p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter publications by topic">
+          <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All <span>6</span></button>
+          <button class="chip" type="button" data-filter="planning" aria-pressed="false">Planning <span>3</span></button>
+          <button class="chip" type="button" data-filter="rl" aria-pressed="false">Reinforcement learning <span>2</span></button>
+          <button class="chip" type="button" data-filter="vision" aria-pressed="false">Computer vision <span>1</span></button>
+        </div>
+
+        <ol class="pubs">
+          <!-- 1 -->
+          <li class="pub reveal" data-topic="rl">
+            <div class="pub__year">’26</div>
+            <div class="pub__body">
+              <span class="venue venue--orange">Under review</span>
+              <h3 class="pub__title">Squared Family MDPs: Provably Efficient RL with Tractable Representations</h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, R. Tsuchida, C. Ong, H. Kurniawati</p>
+              <div class="pub__links">
+                <a class="link-pill" href="mailto:yuanchu.liang@anu.edu.au?subject=Squared%20Family%20MDPs%20draft">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>Request a draft
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y., Tsuchida, R., Ong, C. and Kurniawati, H. Squared Family MDPs: Provably Efficient RL with Tractable Representations. Under review.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2 -->
+          <li class="pub reveal" data-topic="rl">
+            <div class="pub__year">’26</div>
+            <div class="pub__body">
+              <span class="venue venue--orange">NeurIPS 2026</span>
+              <h3 class="pub__title"><a href="https://arxiv.org/abs/2611.07275" target="_blank" rel="noopener">Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging</a></h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, Y. Yang, A. He, H. Kurniawati</p>
+              <p class="pub__venue">Advances in Neural Information Processing Systems (NeurIPS)</p>
+              <div class="pub__links">
+                <a class="link-pill" href="https://arxiv.org/abs/2611.07275" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>arXiv
+                </a>
+                <a class="link-pill" href="https://arxiv.org/pdf/2611.07275" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>PDF
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y., Yang, Y., He, A. and Kurniawati, H., 2026. Efficient Diffusion Policy Fine Tuning with Latent Noise Representation Bridging. Advances in Neural Information Processing Systems. arXiv:2611.07275.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+            <span class="stamp" aria-hidden="true">new<br>✦<br>2026</span>
+          </li>
+
+          <!-- 3 -->
+          <li class="pub reveal" data-topic="planning">
+            <div class="pub__year">’26</div>
+            <div class="pub__body">
+              <span class="venue venue--teal">IJRR 2026</span>
+              <h3 class="pub__title"><a href="https://doi.org/10.1177/02783649261453546" target="_blank" rel="noopener">Think Fast and Far: Long-Horizon Online POMDP Planning via Rapid State Sampling</a></h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, E. Kim, J. A. Knoll, W. Thomason, Z. Kingston, H. Kurniawati, L. E. Kavraki</p>
+              <p class="pub__venue">The International Journal of Robotics Research (IJRR)</p>
+              <div class="pub__links">
+                <a class="link-pill" href="https://doi.org/10.1177/02783649261453546" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>Journal
+                </a>
+                <a class="link-pill" href="https://arxiv.org/abs/2606.04355" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>arXiv
+                </a>
+                <a class="link-pill" href="https://github.com/RDLLab/ROPRAS3" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>Code
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y., Kim, E., Knoll, J. A., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L. E., 2026. Think Fast and Far: Long-Horizon Online POMDP Planning via Rapid State Sampling. The International Journal of Robotics Research. doi:10.1177/02783649261453546.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+            <span class="stamp stamp--teal" aria-hidden="true">journal<br>✦<br>2026</span>
+          </li>
+
+          <!-- 4 -->
+          <li class="pub reveal" data-topic="planning">
+            <div class="pub__year">’24</div>
+            <div class="pub__body">
+              <span class="venue venue--teal">ISRR 2024</span>
+              <h3 class="pub__title"><a href="https://arxiv.org/abs/2411.07032" target="_blank" rel="noopener">Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling</a></h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, E. Kim, W. Thomason, Z. Kingston, H. Kurniawati, L. E. Kavraki</p>
+              <p class="pub__venue">International Symposium of Robotics Research (ISRR)</p>
+              <div class="pub__links">
+                <a class="link-pill" href="https://arxiv.org/abs/2411.07032" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>arXiv
+                </a>
+                <a class="link-pill" href="https://arxiv.org/pdf/2411.07032" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>PDF
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y., Kim, E., Thomason, W., Kingston, Z., Kurniawati, H. and Kavraki, L. E., 2024. Scaling Long-Horizon Online POMDP Planning via Rapid State Space Sampling. International Symposium of Robotics Research (ISRR). arXiv:2411.07032.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5 -->
+          <li class="pub reveal" data-topic="planning">
+            <div class="pub__year">’23</div>
+            <div class="pub__body">
+              <span class="venue venue--teal">IROS 2023</span>
+              <h3 class="pub__title"><a href="https://ieeexplore.ieee.org/document/10341759" target="_blank" rel="noopener">Recurrent Macro Actions Generator for POMDP Planning</a></h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, H. Kurniawati</p>
+              <p class="pub__venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 2026–2033</p>
+              <div class="pub__links">
+                <a class="link-pill" href="https://ieeexplore.ieee.org/document/10341759" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>IEEE Xplore
+                </a>
+                <a class="link-pill" href="https://github.com/YC-Liang/Recurrent-Macro-Action-Generator" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>Code
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y. and Kurniawati, H., 2023. Recurrent Macro Actions Generator for POMDP Planning. IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 2026–2033. IEEE.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6 -->
+          <li class="pub reveal" data-topic="vision">
+            <div class="pub__year">’22</div>
+            <div class="pub__body">
+              <span class="venue venue--violet">CVPR Workshops 2022</span>
+              <h3 class="pub__title"><a href="https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.html" target="_blank" rel="noopener">DRT: A Lightweight Single Image Deraining Recursive Transformer</a></h3>
+              <p class="pub__authors"><b class="me">Y. Liang</b>, S. Anwar, Y. Liu</p>
+              <p class="pub__venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW, NTIRE), pp. 589–598</p>
+              <div class="pub__links">
+                <a class="link-pill" href="https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.html" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>CVF Open Access
+                </a>
+                <a class="link-pill" href="https://github.com/YC-Liang/DRT" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>Code
+                </a>
+                <button class="link-pill link-pill--quiet" type="button" data-cite="Liang, Y., Anwar, S. and Liu, Y., 2022. DRT: A Lightweight Single Image Deraining Recursive Transformer. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 589–598.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Cite
+                </button>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section--alt" id="experience" aria-labelledby="exp-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§04</span>
+          <h2 id="exp-title">Experience</h2>
+          <p class="section__sub">Research, industry, teaching, and a few rockets along the way.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl reveal">
+            <span class="tl__date mono">Mar – Sep 2026</span>
+            <div class="tl__card">
+              <h3>AI Resident <span class="at">@ Maincode</span></h3>
+              <p class="tl__sub">Diffusion policy fine-tuning with reinforcement learning</p>
+              <ul>
+                <li>Developed new mathematical frameworks for fine-tuning robotic diffusion policies with RL, achieving strong results across a broad range of state-based and vision-based tasks.</li>
+                <li>Took the algorithm beyond simulation, applying it to real robots and pretrained foundation models.</li>
+                <li>Collaborated with Dr Yue Yang; this work led to our NeurIPS 2026 paper.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl reveal">
+            <span class="tl__date mono">2023 · 2026</span>
+            <div class="tl__card">
+              <h3>Casual Tutor <span class="at">@ ANU</span></h3>
+              <p class="tl__sub">Statistical Machine Learning · Deep Learning</p>
+              <ul>
+                <li>Tutored Statistical Machine Learning (Prof. Lexing Xie) and Deep Learning (Prof. Stephen Gould).</li>
+                <li>Ran lab classes, helped design assignments, led marking and kept the online forums lively.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl reveal">
+            <span class="tl__date mono">Dec 2022 – Mar 2023</span>
+            <div class="tl__card">
+              <h3>Robotics Intern <span class="at">@ CSIRO Data61</span></h3>
+              <p class="tl__sub">Manipulation in cluttered environments</p>
+              <ul>
+                <li>Explored robotic object manipulation in clutter, supervised by Dr Tirthankar Bandyopadhyay.</li>
+                <li>Built custom simulation environments for robot arms using robosuite, the MuJoCo physics engine and OMPL.</li>
+                <li>Stress-tested a range of state-of-the-art methods to map out their limitations.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl reveal">
+            <span class="tl__date mono">Nov 2021 – Feb 2022</span>
+            <div class="tl__card">
+              <h3>Summer Research Scholar <span class="at">@ ANU</span></h3>
+              <p class="tl__sub">Online attention in social media</p>
+              <ul>
+                <li>Studied filter bubbles and echo chambers in recommendation systems with Prof. Lexing Xie.</li>
+                <li>Modelled online interactions with stochastic processes and ran experiments in the T-RECS simulator.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="tl reveal">
+            <span class="tl__date mono">2019 – 2021</span>
+            <div class="tl__card">
+              <h3>Technical Lead <span class="at">@ ANU Rocketry &amp; ANU Formula Sport</span></h3>
+              <p class="tl__sub">Student engineering teams</p>
+              <ul>
+                <li>Led the avionics subsystem for ANU Rocketry, designing and building the electronics for ignition, parachute deployment, logging and control across several rockets.</li>
+                <li>Served as a technical lead for ANU Formula Sport, helping build the team from scratch and contributing to mechanical design and compliance checks.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION + HONOURS ============ -->
+    <section class="section" id="education" aria-labelledby="edu-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§05</span>
+          <h2 id="edu-title">Education &amp; recognition</h2>
+        </header>
+
+        <div class="edu">
+          <article class="edu__card reveal">
+            <span class="mono edu__when">Feb 2024 – present</span>
+            <h3>PhD in Computer Science</h3>
+            <p class="edu__where">The Australian National University</p>
+            <p class="edu__thesis">“On Robust and General-Purpose Sequential Decision-Making Systems for Robotics”</p>
+            <p>
+              My thesis focuses on general, robust and efficient decision-making for robots, spanning motion planning under uncertainty,
+              provably efficient RL and diffusion policy fine-tuning.
+            </p>
+          </article>
+
+          <article class="edu__card reveal">
+            <span class="mono edu__when">Mar 2019 – Nov 2023</span>
+            <h3>BEng (Hons) &amp; BSc</h3>
+            <p class="edu__where">The Australian National University</p>
+            <p class="edu__badges"><span>First-Class Honours</span><span>GPA 6.74 / 7</span></p>
+            <p>
+              Majored in <strong>Mechatronics</strong> (control theory, system dynamics, embedded systems, robotics) and
+              <strong>Computer Science</strong> (AI and ML), with a minor in <strong>Mathematics</strong> (analysis, algebra, computational maths).
+            </p>
+          </article>
+
+          <article class="edu__card edu__card--list reveal">
+            <span class="mono edu__when">Honours &amp; service</span>
+            <ul class="honours">
+              <li><span class="honours__icon" aria-hidden="true">★</span><div><b>Gold Reviewer Award</b>, ICML 2026</div></li>
+              <li><span class="honours__icon" aria-hidden="true">✎</span><div><b>Reviewer</b> for NeurIPS, ICML, IROS, RSS and ICRA</div></li>
+              <li><span class="honours__icon" aria-hidden="true">◆</span><div><b>Australian Government RTP International Scholarship</b> &amp; International Fee-Offset Scholarship, 2024–present</div></li>
+              <li><span class="honours__icon" aria-hidden="true">☀</span><div><b>ANU Summer Research Scholarship</b></div></li>
+              <li><span class="honours__icon" aria-hidden="true">✦</span><div><b>Machine Learning Summer School</b>, Feb 2026: online learning, machine unlearning, LLMs and geometric deep learning</div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TOOLBOX ============ -->
+    <section class="section section--alt" id="toolbox" aria-labelledby="tools-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§06</span>
+          <h2 id="tools-title">Toolbox</h2>
+          <p class="section__sub">Full-stack robotics: from theory on a whiteboard to a teleoperated robot arm collecting data.</p>
+        </header>
+
+        <div class="tools">
+          <div class="tools__group reveal">
+            <h3 class="mono">simulation &amp; benchmarks</h3>
+            <ul><li>MuJoCo</li><li>PyBullet</li><li>robosuite</li><li>robomimic</li><li>LIBERO</li><li>OGBench</li><li>DM Control</li><li>Gymnasium</li></ul>
+          </div>
+          <div class="tools__group reveal">
+            <h3 class="mono">real robots</h3>
+            <ul><li>ROS 2</li><li>UFactory xArm</li><li>Hello Robot Stretch</li><li>Teleoperation pipelines</li><li>π<sub>0</sub> adaptation</li></ul>
+          </div>
+          <div class="tools__group reveal">
+            <h3 class="mono">ml &amp; code</h3>
+            <ul><li>PyTorch</li><li>JAX</li><li>Python</li><li>C++</li><li>Java</li><li>LLM APIs</li></ul>
+          </div>
+          <div class="tools__group reveal">
+            <h3 class="mono">compute</h3>
+            <ul><li>Slurm</li><li>Singularity</li><li>Docker</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND ============ -->
+    <section class="section" id="beyond" aria-labelledby="beyond-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__num">§07</span>
+          <h2 id="beyond-title">Beyond the lab</h2>
+          <p class="section__sub">Good people, friendly robots and a lot of sandstone.</p>
+        </header>
+
+        <div class="gallery">
+          <figure class="photo photo--wide reveal">
+            <img src="images/web/lab.jpg" alt="Members of the Robust Decision Making and Learning Lab at ANU posing with a robot arm and letter blocks spelling ANU and ROBOT" width="1800" height="1200" loading="lazy">
+            <figcaption><span class="mono">fig. 1</span> The RDL Lab crew at ANU, plus a few robot friends.</figcaption>
+          </figure>
+          <figure class="photo reveal">
+            <img src="images/web/climb.jpg" alt="Four photos of Yuanchu rock climbing on sandstone cliffs" width="1100" height="1100" loading="lazy">
+            <figcaption><span class="mono">fig. 2</span> Weekend meditation, vertical edition.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__inner reveal">
+        <p class="kicker">§08 · get in touch</p>
+        <h2 id="contact-title">Let’s talk robots, RL,<br>or <em>climbing routes</em>.</h2>
+        <p class="contact__text">I’m always happy to chat about research, collaborations or a thought-provoking idea. My inbox is open.</p>
+        <div class="contact__row">
+          <a class="contact__email" href="mailto:yuanchu.liang@anu.edu.au">yuanchu.liang@anu.edu.au</a>
+          <button class="btn btn--ghost btn--small" type="button" id="copy-email" data-copy="yuanchu.liang@anu.edu.au">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+            Copy
+          </button>
+        </div>
+        <div class="contact__links">
+          <a href="https://github.com/YC-Liang" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/yuanchu-liang-89485320b" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Yuanchu (James) Liang</span>
+      <span class="mono">Hand-built with HTML, CSS &amp; one small particle filter · updated Nov 2026</span>
+      <a href="#top" class="mono">back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
